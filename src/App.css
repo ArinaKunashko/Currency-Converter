@@ -1,38 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+body {
+  background-color: rgb(6, 99, 73);
+}
+
+* {
+  font-family: 'Inter', system-ui !important;
+  box-sizing: border-box;
+  user-select: none;
+}
+
 .App {
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 30px;
+  width: 800px;
+  margin: 100px auto;
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+input {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 20px 20px;
+    letter-spacing: 1.3px;
+    outline: none;
+    margin-top: 20px;
+    border-radius: 5px;
+    width: 100%
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.currencies {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  li {
+    display:inline-flex;
+    padding: 10px 20px;
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    justify-content: center;
+    flex: 1
   }
-  to {
-    transform: rotate(360deg);
+
+  .hover {
+      background-color: rgba(0, 0, 0, 0.03);
+    }
+
+  .active {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+  .active {
+      background-color:rgba(255, 179, 0, 0.914);
+      color: #fff;
+    }
+
+  .last-of-type {
+      display: inline-flex;
+      align-items: center;
+      flex: 0 0 50px;
+      border-right: 0;
   }
-}
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    
+  

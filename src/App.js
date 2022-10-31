@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Block } from './Block';
-import './App.css';
+import React, { useEffect, useRef, useState } from 'react'
+import { Block } from './Block'
+import './App.css'
 
 
 function App() {
@@ -18,7 +18,6 @@ const ratesRef = useRef({})
       .then((res) => res.json())
       .then((json) => {
         ratesRef.current = json.rates
-        console.log(json.rates)
         onChangeToPrice(1)
       })
       .catch((err) => {
@@ -40,6 +39,18 @@ const ratesRef = useRef({})
     setToPrice(value)
   }
 
+  const handleChangeFromCurrency = (e, newCurr) => {
+    if (newCurr !== null) {
+      setFromCurrency(newCurr)
+    }
+  }
+
+  const handleChangeToCurrency = (e, newCurr) => {
+    if (newCurr !== null) {
+      setToCurrency(newCurr)
+    }
+  }
+
   useEffect( () => {
     onChangeFromPrice(fromPrice)
     }, [fromCurrency])
@@ -53,14 +64,14 @@ const ratesRef = useRef({})
     <div className="App">
       <Block value={fromPrice}
         currency={fromCurrency}
-        onChangeCurrency={setFromCurrency}
+        onChangeCurrency={handleChangeFromCurrency}
         onChangeValue={onChangeFromPrice} />
       <Block value={toPrice}
         currency={toCurrency}
-        onChangeCurrency={setToCurrency}
+        onChangeCurrency={handleChangeToCurrency}
         onChangeValue={onChangeToPrice} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

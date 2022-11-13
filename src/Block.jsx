@@ -37,7 +37,7 @@ export const Block = ({ value, currency, onChangeValue, onChangeCurrency }) => {
         <ToggleButton
           onClick={handleClick}
           aria-controls={open ? 'demo-positioned-menu' : undefined}
-          aria-haspopup="true"
+          aria-haspopup='true'
           aria-expanded={open ? 'true' : undefined}
           value={null}
           selected={additionalCurrencies.indexOf(currency) > 0}>
@@ -46,8 +46,8 @@ export const Block = ({ value, currency, onChangeValue, onChangeCurrency }) => {
         </ToggleButton>
       </ToggleButtonGroup>
       <Menu
-        id="demo-positioned-menu"
-        aria-labelledby="demo-positioned-button"
+        id='demo-positioned-menu'
+        aria-labelledby='demo-positioned-button'
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}

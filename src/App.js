@@ -14,9 +14,10 @@ function App() {
 const ratesRef = useRef({})
 
   useEffect(() => {
-    fetch('https://cdn.cur.su/api/cbr.json')
+    fetch('https://www.cbr-xml-daily.ru/latest.js')
       .then((res) => res.json())
       .then((json) => {
+        json.rates['RUB']=1
         ratesRef.current = json.rates
         onChangeToPrice(1)
       })
@@ -59,8 +60,8 @@ const ratesRef = useRef({})
       onChangeToPrice(toPrice)
       }, [toCurrency])
 
-
   return (
+    
     <div className="App">
       <Block value={fromPrice}
         currency={fromCurrency}

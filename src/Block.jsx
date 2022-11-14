@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import { ToggleButton, ToggleButtonGroup, Menu, MenuItem } from '@mui/material'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
 
-
-
 const defaultCurrencies = ['RUB', 'USD', 'EUR', 'GBP']
 const additionalCurrencies = ['JPY', 'AUD', 'BGN', 'BRL', 'KGS', 'MDL', 'NOK', 'RON']
 

@@ -2,14 +2,12 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Block } from './Block'
 import './App.css'
 
-
 function App() {
   const [fromCurrency, setFromCurrency] = useState('RUB')
   const [toCurrency, setToCurrency] = useState('USD')
   const [fromPrice, setFromPrice] = useState(0)
   
   const [toPrice, setToPrice] = useState(1)
-
 
 const ratesRef = useRef({})
 

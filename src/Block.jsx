@@ -59,7 +59,8 @@ export const Block = ({ value, currency, onChangeValue, onChangeCurrency }) => {
       <input
         onChange={(e) => onChangeValue(e.target.value)}
         value={value}
-        type="number"
+        min={0}
+        type='number'
         placeholder={0}
       />
     </div>

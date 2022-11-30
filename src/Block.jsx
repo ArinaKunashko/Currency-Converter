@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { ToggleButton, ToggleButtonGroup, Menu, MenuItem } from '@mui/material'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
+import Grid from '@mui/material/Grid'
 
 const defaultCurrencies = ['RUB', 'USD', 'EUR', 'GBP']
 const additionalCurrencies = ['JPY', 'AUD', 'BGN', 'BRL', 'KGS', 'MDL', 'NOK', 'RON']
@@ -17,7 +18,9 @@ export const Block = ({ value, currency, onChangeValue, onChangeCurrency }) => {
   }
 
   return (
-    <div className="block">
+    <Grid item xs={1} sm={1} md={1}> 
+    <div className='block'>
+
 
       <ToggleButtonGroup value={currency}
         exclusive
@@ -43,6 +46,7 @@ export const Block = ({ value, currency, onChangeValue, onChangeCurrency }) => {
           <ArrowDropDownIcon />
         </ToggleButton>
       </ToggleButtonGroup>
+     
       <Menu
         id='demo-positioned-menu'
         aria-labelledby='demo-positioned-button'
@@ -56,6 +60,7 @@ export const Block = ({ value, currency, onChangeValue, onChangeCurrency }) => {
           ))
         }
       </Menu>
+      
       <input
         onChange={(e) => onChangeValue(e.target.value)}
         value={value}
@@ -64,5 +69,7 @@ export const Block = ({ value, currency, onChangeValue, onChangeCurrency }) => {
         placeholder={0}
       />
     </div>
+       </Grid>
+    
   )
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Block } from './Block'
-import './App.css'
+import './App.scss'
+import { Grid } from '@mui/material'
 
 function App() {
   const [fromCurrency, setFromCurrency] = useState('RUB')
@@ -60,7 +61,8 @@ const ratesRef = useRef({})
 
   return (
     
-    <div className="App">
+    <div className='App'>
+      <Grid container columns={{ xs: 1, md: 2, sm: 2, xl: 2}} spacing={4}>
       <Block value={fromPrice}
         currency={fromCurrency}
         onChangeCurrency={handleChangeFromCurrency}
@@ -69,6 +71,7 @@ const ratesRef = useRef({})
         currency={toCurrency}
         onChangeCurrency={handleChangeToCurrency}
         onChangeValue={onChangeToPrice} />
+        </Grid>
     </div>
   )
 }

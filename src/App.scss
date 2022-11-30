@@ -11,9 +11,6 @@ body {
 }
 
 .App {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 30px;
   width: 800px;
   margin: 100px auto;
   background-color: #fff;
@@ -34,5 +31,9 @@ input {
     width: 100%
   }
 
+  @media (max-width: 30rem) {
+    .App {
+      width: 100%;
+    }
+  }
 
-  
